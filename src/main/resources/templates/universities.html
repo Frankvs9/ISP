@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>世界大学2018学术排名</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>世界排名</th>
+        <th>学校</th>
+        <th>国家</th>
+        <th>国家/地区排名</th>
+        <th>总分</th>
+    </tr>
+    <tr th:each="uni : ${universities}">　
+        <td th:text="${uni['rank']}">排名</td>
+        　　
+        <td><a href="" th:href="${uni['href']}"
+               th:text="${uni['name']}">名称</a></td>
+        <td th:text="${uni['location']}">国家</td>
+        <td th:text="${uni['local_rank']}">本地排名</td>
+        <td th:text="${uni['score']}">得分</td>
+
+    </tr>
+
+</table>
+</body>
+</html>
